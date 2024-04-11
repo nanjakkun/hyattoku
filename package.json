@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Nanjakkun <nanjakkun@gmail.com>",
   "dependencies": {
+    "@types/css-modules": "^1.0.5",
     "gatsby": "^5.13.4",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",

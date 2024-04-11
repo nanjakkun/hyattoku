@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Nanjakkun <nanjakkun@gmail.com>",
   "dependencies": {
     "gatsby": "^5.13.4",
     "gatsby-plugin-image": "^3.13.1",
@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "prettier": "^3.2.5"
   },
   "keywords": [
@@ -28,7 +29,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

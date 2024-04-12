@@ -1,37 +1,17 @@
 {
-  "name": "juttoku",
-  "private": true,
-  "description": "Tools",
-  "version": "0.1.0",
-  "author": "Nanjakkun <nanjakkun@gmail.com>",
-  "dependencies": {
-    "gatsby": "^5.13.4",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "prettier": "^3.2.5"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "jest"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/nanjakkun/juttoku"
+  "dependencies": {
+    "astro": "^4.6.1",
+    "@astrojs/check": "^0.5.10",
+    "typescript": "^5.4.5"
   }
 }

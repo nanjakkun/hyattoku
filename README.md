@@ -1,8 +1,8 @@
-# Juttoku
+# Hyakutoku
 
-## What's Juttoku
+## What's Hyakutoku
 
-Juttoku contains utility tools available on web browsers
+Hyakutoku contains utility tools available on web browsers
 
 ## Requirement
 

@@ -17,7 +17,7 @@ npm install
 ## Launch
 
 ```
-gatsby develop
+npm run dev
 ```
 
 ## Deploy

@@ -7,6 +7,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nanjakkun.github.io',
-  base: '/juttoku',
+  base: '/hyakutoku',
   integrations: [react(), tailwind()]
 });

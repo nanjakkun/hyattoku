@@ -8,5 +8,10 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://nanjakkun.github.io',
   base: '/hyakutoku',
-  integrations: [react(), tailwind()]
+  integrations: [react(), tailwind()],
+  vite: {
+    ssr: {
+      noExternal: ["qrcode.react"],
+    },
+  },
 });

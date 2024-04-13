@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { QRCodeSVG } from 'qrcode.react';
+import { QRCodeSVG } from "qrcode.react";
 
 /**
  * QRコード生成くん
@@ -9,14 +9,16 @@ import { QRCodeSVG } from 'qrcode.react';
 export const QR = () => {
   const [text, setText] = useState("change text!");
 
-  return(
-    <div className=''>
-      <p className='my-4 flex justify-center'>
-        <input className='border border-black text-black'
+  return (
+    <div className="">
+      <p className="my-4 flex justify-center">
+        <input
+          className="border border-black text-black"
           value={text}
-          onChange={(event)=>setText(event.target.value)} />
+          onChange={(event) => setText(event.target.value)}
+        />
       </p>
-      <div className='flex justify-center'>
+      <div className="flex justify-center">
         <QRCodeSVG
           value={text}
           size={256}
@@ -33,5 +35,5 @@ export const QR = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};

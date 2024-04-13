@@ -12,4 +12,13 @@ test("has title", async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/ホーム/);
+
+  // Header
+  const el1 = page.locator('header');
+  await expect(el1).toHaveText(/百徳/);
+
+  // Footer
+  const el2 = page.locator('footer li:first-child');
+  await expect(el2).toHaveText(/百徳/);
+
 });

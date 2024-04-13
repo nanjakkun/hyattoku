@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NamingJa } from "../components/NamingJa.tsx";
+---
+
+<Layout
+  title="ランダム名前生成"
+  description="ランダムに日本語の人名を生成します"
+>
+  <NamingJa client:load />
+</Layout>

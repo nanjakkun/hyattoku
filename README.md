@@ -32,7 +32,6 @@ Before E2E test, build is required
 npm run build
 ```
 
-
 Run all tests with headless browser
 
 ```
@@ -44,3 +43,8 @@ Run all tests with headed browser
 ```
 npx playwright test --headed
 ```
+
+## Features
+
+- QR code generator
+- Random name generator

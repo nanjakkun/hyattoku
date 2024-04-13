@@ -11,7 +11,6 @@ test("has title", async ({ page }) => {
   await expect(page).toHaveTitle(/QR/);
 
   // SVG
-  const svg = page.locator('main svg');
+  const svg = page.locator("main svg");
   await expect(svg).toBeVisible();
-
 });

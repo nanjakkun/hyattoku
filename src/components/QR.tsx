@@ -2,7 +2,8 @@ import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
 /**
- * QRコード生成くん
+ * QR code generator using qrcode.react
+ * https://github.com/zpao/qrcode.react
  *
  * @returns JSX.Element
  */

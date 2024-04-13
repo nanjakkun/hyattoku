@@ -26,17 +26,21 @@ When pull request is merged into main branch, github actions is triggerd and cha
 
 ## E2E test(local)
 
-Run all tests with headless browser
+Before E2E test, build is required
 
 ```
 npm run build
-npx playwright test
 ```
 
+
+Run all tests with headless browser
+
+```
+npx playwright test
+```
 
 Run all tests with headed browser
 
 ```
-npm run build
 npx playwright test --headed
 ```

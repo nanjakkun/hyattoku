@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { QR } from "../components/QR.tsx";
 ---
 
-<Layout title="QRコード生成">
+<Layout
+  title="QRコード生成"
+  description="QRコード(二次元バーコード)を生成します"
+>
   <QR client:load />
 </Layout>

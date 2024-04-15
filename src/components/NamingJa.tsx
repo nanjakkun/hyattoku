@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import {
   FamilyNamesJa,
   FirstNamesMalesJa,
-} from "../components/naming/names_ja.ts";
+} from "./naming/names_ja.ts";
+
+import { Button } from "./common/Button.tsx";
 
 /**
  * Random Japanese name generator
@@ -10,11 +12,13 @@ import {
  * @returns JSX.Element
  */
 export const NamingJa = () => {
-  const [names, setNames] = useState<Array<string>>(['ここに結果が出力されます']);
-  const [text, setText] = useState<string>('');
+  const [names, setNames] = useState<Array<string>>([
+    "ここに結果が出力されます",
+  ]);
+  const [text, setText] = useState<string>("");
 
   useEffect(() => {
-    setText(names.join('\n'));
+    setText(names.join("\n"));
   }, [names]);
 
   const onGenerateButtonClick = () => {
@@ -25,20 +29,18 @@ export const NamingJa = () => {
       const idx2 = Math.floor(Math.random() * FirstNamesMalesJa.length);
       const first_name = FirstNamesMalesJa[idx2];
 
-      return family_name.name  + "　" + first_name.name;
+      return family_name.name + "　" + first_name.name;
     });
 
-    console.log(_names)
-
-    setNames(_names)
-  }
+    setNames(_names);
+  };
 
   return (
     <div className="">
       <p className="my-4 flex justify-center">
-        <button className="border p-2" onClick={onGenerateButtonClick}>
+        <Button onClick={onGenerateButtonClick} primary>
           生成
-        </button>
+        </Button>
       </p>
       <div className="flex justify-center">
         <textarea

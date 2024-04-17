@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { FamilyNamesJa } from "./naming/FamilyNamesJa.ts";
-import { FirstNamesMalesJa } from "./naming/FirstNamesMalesJa.ts";
-import { FirstNamesFemalesJa } from "./naming/FirstNamesFemalesJa.ts";
 
 import { Button } from "./common/Button.tsx";
 import { RadioButtonItems } from "@/components/common/RadioButtonGroup.tsx";
+
+import { generateJpNames } from "@/functions/naming/generateJpNames.ts";
+import { downloadText } from "@/functions/naming/donwloads/downloadText.ts";
 
 /**
  * Random Japanese name generator
@@ -21,71 +21,49 @@ export const NamingJa = () => {
 
   const [exportTarget, setExportTarget] = useState<string>("full");
 
+  const [num, setNum] = useState(10);
+
   useEffect(() => {
     setText(names.join("\n"));
   }, [names]);
 
   const onGenerateButtonClick = () => {
-    // TODO: ヘッダ出力
-    // TODO: 件数可変
+    const params = {
+      num,
+      exportTarget,
+    };
 
-    const _names: string[] = new Array(10).fill(undefined).map(() => {
-      const idx1 = Math.floor(Math.random() * FamilyNamesJa.length);
-      const family_name = FamilyNamesJa[idx1];
-      let first_name = undefined;
-      let gender = undefined;
-
-      const rand: number = Math.floor(Math.random() * 2);
-
-      switch (rand) {
-        case 0:
-          const idx2 = Math.floor(Math.random() * FirstNamesMalesJa.length);
-          first_name = FirstNamesMalesJa[idx2];
-          gender = "男";
-          break;
-        default:
-          const idx3 = Math.floor(Math.random() * FirstNamesFemalesJa.length);
-          first_name = FirstNamesFemalesJa[idx3];
-          gender = "女";
-          break;
-      }
-
-      if (exportTarget === "full") {
-        return [
-          family_name.name,
-          first_name.name,
-          family_name.kana,
-          first_name.kana,
-          gender,
-        ].join(",");
-      }
-      return family_name.name + "　" + first_name.name;
-    });
-
-    setNames(_names);
+    setNames(generateJpNames(params));
   };
 
   const onDownloadButtonClick = () => {
-    const blob = new Blob([text], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "names.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const file_name = "random_names.csv";
+    downloadText({ text, file_name });
   };
 
-  const onRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onExportTargerRadioChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = (event.target as HTMLInputElement).value;
     setExportTarget(value);
+  };
+
+  const onNumRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = (event.target as HTMLInputElement).value;
+    setNum(Number(value));
   };
 
   const exportTargets = [
     { value: "full", label: "全て" },
     { value: "simple", label: "漢字姓名のみ" },
-  ]
+  ];
+
+  const nums = [
+    { value: "1", label: "1件" },
+    { value: "10", label: "10件" },
+    { value: "100", label: "100件" },
+    { value: "1000", label: "1000件" },
+  ];
 
   return (
     <div className="">
@@ -93,7 +71,14 @@ export const NamingJa = () => {
         <RadioButtonItems
           items={exportTargets}
           selectedValue={exportTarget}
-          onChange={onRadioChange}
+          onChange={onExportTargerRadioChange}
+        />
+      </div>
+      <div className="my-4 flex justify-center">
+        <RadioButtonItems
+          items={nums}
+          selectedValue={String(num)}
+          onChange={onNumRadioChange}
         />
       </div>
       <p className="my-4 flex justify-center">

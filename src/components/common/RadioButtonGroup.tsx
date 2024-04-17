@@ -5,8 +5,8 @@
  */
 
 type Props = {
-  items: { value: any; label: string }[];
-  selectedValue: any;
+  items: { value: string; label: string }[];
+  selectedValue: string;
   onChange: (e: any) => void;
 };
 

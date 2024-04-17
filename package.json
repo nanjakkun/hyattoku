@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "format": "prettier --ignore-path .gitignore --write './**/*.{js,cjs,ts,jsx,tsx,astro,json,html,md}'",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
@@ -28,6 +29,7 @@
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "vitest": "^1.5.0"
   }
 }

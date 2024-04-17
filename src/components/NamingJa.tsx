@@ -5,6 +5,7 @@ import { Button } from "./common/Button.tsx";
 import { RadioButtonItems } from "@/components/common/RadioButtonGroup.tsx";
 
 import { generateJpNames } from "@/functions/naming/generateJpNames.ts";
+import { downloadText } from "@/functions/naming/donwloads/downloadText.ts";
 
 /**
  * Random Japanese name generator
@@ -36,18 +37,13 @@ export const NamingJa = () => {
   };
 
   const onDownloadButtonClick = () => {
-    const blob = new Blob([text], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "names.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    const file_name = "random_names.csv";
+    downloadText({ text, file_name });
   };
 
-  const onExportTargerRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onExportTargerRadioChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const value = (event.target as HTMLInputElement).value;
     setExportTarget(value);
   };

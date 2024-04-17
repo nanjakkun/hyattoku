@@ -5,7 +5,7 @@ import { Button } from "./common/Button.tsx";
 import { RadioButtonItems } from "@/components/common/RadioButtonGroup.tsx";
 
 import { generateJpNames } from "@/functions/naming/generateJpNames.ts";
-import { downloadText } from "@/functions/naming/donwloads/downloadText.ts";
+import { downloadText } from "@/functions/donwloads/downloadText.ts";
 
 /**
  * Random Japanese name generator

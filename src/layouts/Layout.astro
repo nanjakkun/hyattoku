@@ -1,6 +1,7 @@
 ---
 import Header from "./Header.astro";
 import Footer from "./Footer.astro";
+import Gtag from "./Gtag.astro";
 
 interface Props {
   title: string;
@@ -19,6 +20,7 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/hyattoku/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>百徳ツール | {title}</title>
+    <Gtag />
   </head>
   <body>
     <Header />

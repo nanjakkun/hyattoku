@@ -26,7 +26,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@astrojs/partytown": "^2.0.4",
+    "@astrojs/partytown": "^2.1.0",
     "@playwright/test": "^1.43.1",
     "@types/node": "^20.12.7",
     "prettier": "^3.2.5",

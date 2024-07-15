@@ -29,7 +29,7 @@
     "@astrojs/partytown": "^2.1.1",
     "@playwright/test": "^1.45.1",
     "@types/node": "^20.14.10",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.0",
     "vitest": "^2.0.2"
   }

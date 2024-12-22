@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.1.2",
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.49.1",
     "@types/node": "^22.10.1",
     "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
